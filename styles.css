@@ -1,0 +1,46 @@
+/* Navbar */
+.navbar-custom {
+  background-color: #ff8c1a;
+}
+
+/* Background grid */
+.hero {
+  height: calc(100vh - 56px);
+  background-color: #f4c38e;
+  background-image:
+    linear-gradient(#4d7180 2px, transparent 1px),
+    linear-gradient(90deg, #4d7180 2px, transparent 1px);
+  background-size: 30px 30px;
+}
+
+/* Card */
+.hero-card {
+  width: 420px;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  border: none;
+}
+
+/* Welcome tag */
+.welcome-tag {
+  position: absolute;
+  top: -18px;
+  left: -18px;
+  background-color: #5bb9e8;
+  padding: 8px 16px;
+  border-radius: 12px;
+  font-weight: bold;
+}
+
+/* Button */
+.btn-pink {
+  background-color: #f6a6b8;
+  color: black;
+  font-weight: bold;
+  border-radius: 20px;
+  padding: 8px 20px;
+}
+
+.btn-pink:hover {
+  background-color: #f28fa6;
+}
