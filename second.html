@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>StudentHub - AP Macro & Micro</title>
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #f4f7fb;
+}
+
+header {
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 10px;
+}
+
+nav button {
+  background: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+nav button:hover {
+  background: #ffd166;
+}
+
+.section {
+  display: none;
+  padding: 40px;
+}
+
+.active {
+  display: block;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+}
+
+.progress-bar {
+  width: 100%;
+  background: #ddd;
+  border-radius: 20px;
+  overflow: hidden;
+  height: 20px;
+}
+
+.progress {
+  height: 100%;
+  width: 0%;
+  background: #2a5298;
+  transition: 0.5s;
+}
+
+button.primary {
+  background: #2a5298;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+button.primary:hover {
+  background: #1e3c72;
+}
+
+.quiz-option {
+  display: block;
+  margin: 8px 0;
+  cursor: pointer;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #1e3c72;
+  color: white;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>📚 StudentHub</h1>
+  <p>AP Macro & Micro — Built by Students, for Students</p>
+  <nav>
+    <button onclick="showSection('dashboard')">Dashboard</button>
+    <button onclick="showSection('schedule')">Schedule</button>
+    <button onclick="showSection('resources')">Resources</button>
+  </nav>
+</header>
+
+<!-- DASHBOARD -->
+<div id="dashboard" class="section active">
+  <h2>Student Dashboard</h2>
+
+  <div class="card">
+    <h3>Progress Tracker</h3>
+    <p>Lessons Completed: <span id="completedLessons">0</span>/3</p>
+    <div class="progress-bar">
+      <div id="progressBar" class="progress"></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Quiz Score</h3>
+    <p>Latest Score: <span id="quizScore">Not Taken</span></p>
+  </div>
+</div>
+
+<!-- SCHEDULE -->
+<div id="schedule" class="section">
+  <h2>Live Tutoring & Study Groups</h2>
+
+  <div class="card">
+    <h3>📅 Weekly Sessions</h3>
+    <ul>
+      <li>Monday 4 PM — Supply & Demand Review</li>
+      <li>Wednesday 6 PM — Fiscal Policy Workshop</li>
+      <li>Saturday 11 AM — FRQ Practice Session</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>👥 Group Study Sign-Up</h3>
+    <button class="primary" onclick="alert('You are signed up! Check your email for details.')">
+      Join Study Group
+    </button>
+  </div>
+</div>
+
+<!-- RESOURCES -->
+<div id="resources" class="section">
+  <h2>Learning Resources</h2>
+
+  <div class="card">
+    <h3>📖 Lesson 1: Supply & Demand</h3>
+    <p>Understand how market equilibrium works and shifts in curves.</p>
+    <button class="primary" onclick="completeLesson()">Mark Complete</button>
+  </div>
+
+  <div class="card">
+    <h3>📖 Lesson 2: GDP & Economic Growth</h3>
+    <button class="primary" onclick="completeLesson()">Mark Complete</button>
+  </div>
+
+  <div class="card">
+    <h3>📖 Lesson 3: Monetary Policy</h3>
+    <button class="primary" onclick="completeLesson()">Mark Complete</button>
+  </div>
+
+  <div class="card">
+    <h3>🎥 Video Lesson</h3>
+    <iframe width="100%" height="300"
+      src="https://www.youtube.com/embed/PHe0bXAIuk0"
+      frameborder="0" allowfullscreen></iframe>
+  </div>
+
+  <div class="card">
+    <h3>📝 Quick Quiz</h3>
+    <p>What happens when demand increases?</p>
+
+    <label class="quiz-option">
+      <input type="radio" name="quiz" value="wrong">
+      Price decreases
+    </label>
+
+    <label class="quiz-option">
+      <input type="radio" name="quiz" value="correct">
+      Price and quantity increase
+    </label>
+
+    <label class="quiz-option">
+      <input type="radio" name="quiz" value="wrong">
+      Quantity decreases
+    </label>
+
+    <button class="primary" onclick="submitQuiz()">Submit Quiz</button>
+  </div>
+
+  <div class="card">
+    <h3>📥 Downloadable Materials</h3>
+    <a href="#" download>Download Study Guide (PDF)</a>
+  </div>
+
+</div>
+
+<footer>
+  © 2026 StudentHub | Empowering Peer-to-Peer Learning
+</footer>
+
+<script>
+let lessonsCompleted = 0;
+
+function showSection(sectionId) {
+  document.querySelectorAll('.section').forEach(section => {
+    section.classList.remove('active');
+  });
+  document.getElementById(sectionId).classList.add('active');
+}
+
+function completeLesson() {
+  if (lessonsCompleted < 3) {
+    lessonsCompleted++;
+    document.getElementById('completedLessons').innerText = lessonsCompleted;
+
+    let percent = (lessonsCompleted / 3) * 100;
+    document.getElementById('progressBar').style.width = percent + "%";
+  }
+}
+
+function submitQuiz() {
+  const selected = document.querySelector('input[name="quiz"]:checked');
+
+  if (!selected) {
+    alert("Please select an answer.");
+    return;
+  }
+
+  if (selected.value === "correct") {
+    document.getElementById('quizScore').innerText = "100% 🎉";
+    alert("Correct! Great job!");
+  } else {
+    document.getElementById('quizScore').innerText = "0%";
+    alert("Not quite! Review the lesson and try again.");
+  }
+}
+</script>
+
+</body>
+</html>
