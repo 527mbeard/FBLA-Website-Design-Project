@@ -10,9 +10,9 @@ body {
 .background {
   height: 100vh;
   display: flex;
-  align-items: center;
   justify-content: center;
-
+  align-items: flex-start; /* moves card upward */
+  padding-top: 80px;       /* controls how far from top */
   /* peach background with grid */
   background-color: #e6b488;
   background-image:
@@ -21,8 +21,23 @@ body {
   background-size: 40px 40px;
 }
 
+.backgroundabout {
+  background-color:#404e7c;
+  height: 100vh;
+  display: flex;
+  justify-content: right;
+  align-items: flex-start; /* moves card upward */
+  padding-top: 80px;       /* controls how far from top */
+}
+
+.nav1{
+  margin-left:25px;
+}
+
 .card {
-  width: 520px;
+  width: 600px;
+  margin-left:50px;
+  margin-right:50px;
   background: #e9e9e9;
   border-radius: 20px;
   overflow: hidden;
@@ -31,6 +46,16 @@ body {
 
 .top-bar {
   background-color: #63a9c6;
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: Arial, sans-serif;
+  font-weight: 600;
+}
+
+.top-bar {
+  background-color: #f49fbc;
   padding: 15px 20px;
   display: flex;
   align-items: center;
@@ -52,9 +77,17 @@ body {
 .content {
   padding: 40px 30px;
 }
+.content1 {
+}
 
 h1 {
   font-size: 56px;
+  font-weight: 400;
+  margin: 0 0 20px 0;
+}
+
+h2 {
+  font-size: 20px;
   font-weight: 400;
   margin: 0 0 20px 0;
 }
