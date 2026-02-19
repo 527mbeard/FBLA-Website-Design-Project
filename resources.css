@@ -1,0 +1,22 @@
+.navbar-custom {
+  background-color: #ff8c1a;
+}
+
+body {
+  margin: 0;
+  font-family: 'Georgia', serif;
+}
+
+.background {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* moves card upward */
+  padding-top: 80px;       /* controls how far from top */
+  /* peach background with grid */
+  background-color: #e6b488;
+  background-image:
+    linear-gradient(#1f4f5f 1px, transparent 1px),
+    linear-gradient(90deg, #1f4f5f 1px, transparent 1px);
+  background-size: 40px 40px;
+}

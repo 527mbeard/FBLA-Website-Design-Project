@@ -8,12 +8,17 @@ body {
 }
 
 .background {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
-  justify-content: center;
-  align-items: flex-start; /* moves card upward */
-  padding-top: 80px;       /* controls how far from top */
-  /* peach background with grid */
+  flex-direction: column;
+  /* mobile default */
+  align-items: center;
+  /* center horizontally */
+  justify-content: flex-start;
+  gap: 40px;
+  /* space between cards */
+  padding: 80px 20px;
+
   background-color: #e6b488;
   background-image:
     linear-gradient(#1f4f5f 1px, transparent 1px),
@@ -21,55 +26,14 @@ body {
   background-size: 40px 40px;
 }
 
-.backgroundabout {
-  background-color:#404e7c;
-  height: 100vh;
-  display: flex;
-  justify-content: right;
-  align-items: flex-start; /* moves card upward */
-  padding-top: 80px;       /* controls how far from top */
-}
-
-.dashcolor{
-  background-color:#5cb5d8;
-}
-
-/* .backgrounddash {
-  background-color:#5cb5d8;
-  height: 100vh;
-  display: flex;
-  justify-content: right;
-  align-items: flex-start; /* moves card upward */
-  padding-top: 80px;       /* controls how far from top */
-} */
-
-
-.nav1{
-  margin-left:25px;
-}
-
-.card1 {
+.card {
   width: 600px;
-  margin-left:50px;
-  margin-right:50px;
+  margin-left: 50px;
+  margin-right: 50px;
   background: #e9e9e9;
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-}
-
-.card2 {
-  width: 600px;
-  margin-left:50px;
-  margin-right:50px;
-  background: #e9e9e9;
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-}
-
-.carddash {
-  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
 .top-bar {
@@ -82,30 +46,18 @@ body {
   font-weight: 600;
 }
 
-.top-bar1 {
-  background-color: #f49fbc;
-  padding: 15px 20px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-family: Arial, sans-serif;
-  font-weight: 600;
-}
-
 .icon {
   width: 18px;
   height: 18px;
   background: black;
-  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 
-                     68% 57%, 79% 91%, 50% 70%, 
-                     21% 91%, 32% 57%, 2% 35%, 
-                     39% 35%);
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%,
+      68% 57%, 79% 91%, 50% 70%,
+      21% 91%, 32% 57%, 2% 35%,
+      39% 35%);
 }
 
 .content {
   padding: 40px 30px;
-}
-.content1 {
 }
 
 h1 {
@@ -146,4 +98,12 @@ button {
 
 button:hover {
   opacity: 0.9;
+}
+
+@media (min-width: 992px) {
+  .background {
+    flex-direction: row;   /* switch to horizontal */
+    justify-content: center;
+    align-items: flex-start;
+  }
 }

@@ -1,0 +1,61 @@
+.card {
+  border-radius: 20px;
+}
+
+.navbar-custom {
+  background-color: #ff8c1a;
+}
+
+body {
+  margin:0;
+  font-family: 'Georgia', serif;
+}
+
+.background{
+  background-color:#5cb5d8;
+}
+
+.mainbody{
+  margin-right:25px;
+  margin-left:25px;
+}
+
+
+.card-tile {
+      height: 190px;
+      border-radius: 22px;
+      color: #111;
+      position: relative;
+      overflow: hidden;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+    }
+
+    .card-title {
+      font-size: 1.6rem;
+      font-weight: 500;
+      position: relative;
+      z-index: 2;
+    }
+
+    .btn-overlay {
+      position: absolute;
+      top: 75%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 30px;
+      padding: 8px 22px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      z-index: 2;
+    }
+
+    /* Background gradients approximating image */
+    .bg-ap { background: linear-gradient(135deg,#f28c6f,#f7b092); }
+    .bg-exam { background: linear-gradient(135deg,#f5b4a3,#f7d2c6); }
+    .bg-practice { background: linear-gradient(135deg,#a8d86a,#c7e89a); }
+    .bg-tutor { background: linear-gradient(135deg,#b9e37f,#d5f0a7); }
+    .bg-videos { background: linear-gradient(135deg,#b9b6e6,#d6d3f4); }
+    .bg-scores { background: linear-gradient(135deg,#8fd3d0,#b7ecea); }
