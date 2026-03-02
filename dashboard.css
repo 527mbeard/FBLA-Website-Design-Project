@@ -59,27 +59,50 @@ body {
 /* Background gradients approximating image */
 
 .bg-ap {
-  background-image: url(Screenshot\ 2026-02-26\ 113426.png);
-  background-repeat: no repeat;
-  /* background: linear-gradient(135deg,#f28c6f,#f7b092); */
+  background-image: url("apclassespic.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
+  /* background: linear-gradient(135deg,#f28c6f,#f7b092); */
+
 
 .bg-exam {
-  background: linear-gradient(135deg, #f5b4a3, #f7d2c6);
+  background-image: url("examroompic.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  /* background: linear-gradient(135deg, #f5b4a3, #f7d2c6); */
 }
 
 .bg-practice {
-  background: linear-gradient(135deg, #a8d86a, #c7e89a);
+  background-image: url("practiceepic.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  /* background: linear-gradient(135deg, #a8d86a, #c7e89a); */
 }
 
 .bg-tutor {
-  background: linear-gradient(135deg, #b9e37f, #d5f0a7);
+  background-image: url("tutoringpic.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  /* background: linear-gradient(135deg, #b9e37f, #d5f0a7); */
 }
 
 .bg-videos {
-  background: linear-gradient(135deg, #b9b6e6, #d6d3f4);
+  background-image: url("videopic.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  /* background: linear-gradient(135deg, #b9b6e6, #d6d3f4); */
 }
 
 .bg-scores {
-  background: linear-gradient(135deg, #8fd3d0, #b7ecea);
+  background-image: url("scorespic.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  /* background: linear-gradient(135deg, #8fd3d0, #b7ecea); */
 }
