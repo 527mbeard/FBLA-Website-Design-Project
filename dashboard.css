@@ -1,5 +1,6 @@
 .card {
   border-radius: 20px;
+  height:200px;
 }
 
 .navbar-custom {
@@ -56,7 +57,9 @@ body {
   z-index: 2;
 }
 
-/* Background gradients approximating image */
+.iframe{
+  text-align: center;
+}
 
 .bg-ap {
   background-image: url("apclassespic.png");
