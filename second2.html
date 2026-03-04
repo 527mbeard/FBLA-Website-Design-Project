@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Exam Room</title>
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+body {
+    background: linear-gradient(to right, #4e73df, #1cc88a);
+    min-height: 100vh;
+}
+
+.exam-card {
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.choice-btn {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 10px;
+    transition: 0.2s;
+}
+
+.choice-btn:hover {
+    transform: scale(1.02);
+}
+
+.correct {
+    background-color: #198754 !important;
+    color: white !important;
+}
+
+.wrong {
+    background-color: #dc3545 !important;
+    color: white !important;
+}
+</style>
+</head>
+
+<body class="d-flex align-items-center justify-content-center">
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <div class="card exam-card p-4">
+
+                <h3 class="text-center mb-3">📝 Exam Room</h3>
+
+                <p class="text-center">
+                    Question <span id="questionNumber">1</span> of <span id="totalQuestions"></span>
+                </p>
+
+                <h5 id="questionText" class="mb-4"></h5>
+
+                <div id="choicesContainer"></div>
+
+                <div class="text-center mt-3">
+                    <button id="nextBtn" class="btn btn-primary" disabled>Next Question</button>
+                </div>
+
+                <div id="resultSection" class="text-center mt-4 d-none">
+                    <h4>Your Score: <span id="scoreText"></span></h4>
+                    <button onclick="restartQuiz()" class="btn btn-success mt-2">Restart Exam</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+const quiz = [
+    {
+        question: "What does HTML stand for?",
+        choices: [
+            "Hyper Text Markup Language",
+            "High Tech Modern Language",
+            "Home Tool Markup Language",
+            "Hyperlinks and Text Machine Language"
+        ],
+        correct: 0
+    },
+    {
+        question: "Which language styles a website?",
+        choices: ["Python", "CSS", "Java", "C++"],
+        correct: 1
+    },
+    {
+        question: "Which is used for website interactivity?",
+        choices: ["HTML", "CSS", "JavaScript", "Bootstrap"],
+        correct: 2
+    },
+    {
+        question: "Bootstrap is mainly used for?",
+        choices: [
+            "Database management",
+            "Backend programming",
+            "Responsive design",
+            "Game development"
+        ],
+        correct: 2
+    },
+    {
+        question: "is this a test",
+        choices: [
+            "yes",
+            "no",
+            "maybe",
+            "kinda"
+        ],
+        correct: 2
+    }
+];
+
+let currentQuestion = 0;
+let score = 0;
+
+const questionText = document.getElementById("questionText");
+const choicesContainer = document.getElementById("choicesContainer");
+const nextBtn = document.getElementById("nextBtn");
+const questionNumber = document.getElementById("questionNumber");
+const totalQuestions = document.getElementById("totalQuestions");
+const resultSection = document.getElementById("resultSection");
+const scoreText = document.getElementById("scoreText");
+
+totalQuestions.textContent = quiz.length;
+
+function loadQuestion() {
+    nextBtn.disabled = true;
+    choicesContainer.innerHTML = "";
+
+    const q = quiz[currentQuestion];
+    questionText.textContent = q.question;
+    questionNumber.textContent = currentQuestion + 1;
+
+    q.choices.forEach((choice, index) => {
+        const button = document.createElement("button");
+        button.className = "btn btn-outline-dark choice-btn";
+        button.textContent = choice;
+        button.onclick = () => selectAnswer(button, index);
+        choicesContainer.appendChild(button);
+    });
+}
+
+function selectAnswer(button, index) {
+    const correctIndex = quiz[currentQuestion].correct;
+    const buttons = choicesContainer.querySelectorAll("button");
+
+    buttons.forEach(btn => btn.disabled = true);
+
+    if (index === correctIndex) {
+        button.classList.add("correct");
+        score++;
+    } else {
+        button.classList.add("wrong");
+        buttons[correctIndex].classList.add("correct");
+    }
+
+    nextBtn.disabled = false;
+}
+
+nextBtn.addEventListener("click", () => {
+    currentQuestion++;
+
+    if (currentQuestion < quiz.length) {
+        loadQuestion();
+    } else {
+        showResults();
+    }
+});
+
+function showResults() {
+    questionText.textContent = "Exam Complete!";
+    choicesContainer.innerHTML = "";
+    nextBtn.classList.add("d-none");
+    resultSection.classList.remove("d-none");
+    scoreText.textContent = score + " / " + quiz.length;
+}
+
+function restartQuiz() {
+    currentQuestion = 0;
+    score = 0;
+    nextBtn.classList.remove("d-none");
+    resultSection.classList.add("d-none");
+    loadQuestion();
+}
+
+loadQuestion();
+</script>
+
+</body>
+</html>
