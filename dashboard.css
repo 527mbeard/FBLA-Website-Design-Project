@@ -57,55 +57,68 @@ body {
   z-index: 2;
 }
 
+.bg-ap{
+  background: linear-gradient(135deg,#f28c6f,#f7b092); 
+}
+
+.bg-exam{
+  background: linear-gradient(135deg, #f5b4a3, #f7d2c6); 
+}
+
+.bg-practice{
+  background: linear-gradient(135deg, #a8d86a, #c7e89a); 
+}
+
+.bg-tutor{
+  background: linear-gradient(135deg, #b9e37f, #d5f0a7); 
+}
+
+.bg-videos{
+  background: linear-gradient(135deg, #b9b6e6, #d6d3f4); 
+}
+
+.bg-scores{
+  background: linear-gradient(135deg, #8fd3d0, #b7ecea);
+}
+
 .iframe{
   text-align: center;
 }
 
-.bg-ap {
-  background-image: url("apclassespic.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+.btn1:hover{
+  border-color:black;
 }
-  /* background: linear-gradient(135deg,#f28c6f,#f7b092); */
-
-
-.bg-exam {
-  background-image: url("examroompic.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  /* background: linear-gradient(135deg, #f5b4a3, #f7d2c6); */
+.btn2:hover{
+  border-color:black;
 }
-
-.bg-practice {
-  background-image: url("practiceepic.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  /* background: linear-gradient(135deg, #a8d86a, #c7e89a); */
+.btn3:hover{
+  border-color:black;
+}
+.btn4:hover{
+  border-color:black;
+}
+.btn5:hover{
+  border-color:black;
+}
+.btn6:hover{
+  border-color:black;
 }
 
-.bg-tutor {
-  background-image: url("tutoringpic.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  /* background: linear-gradient(135deg, #b9e37f, #d5f0a7); */
+.footer {
+  background-color: #ff8c1a;
+  color: black;
 }
 
-.bg-videos {
-  background-image: url("videopic.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  /* background: linear-gradient(135deg, #b9b6e6, #d6d3f4); */
+.footer a {
+  text-decoration: none;
+  color: black;
 }
 
-.bg-scores {
-  background-image: url("scorespic.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  /* background: linear-gradient(135deg, #8fd3d0, #b7ecea); */
+.footer a:hover {
+  text-decoration: underline;
+  color: white;
+}
+
+.footer-text {
+  max-width: 250px;
 }

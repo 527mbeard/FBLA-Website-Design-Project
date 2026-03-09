@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>Studier Tutoring</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="tutoring.css">
@@ -30,16 +30,155 @@
                     <li class="nav-item">
                         <a class="nav-link text-dark" href="dashboard.html">Dashboard</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" href="about.html">About</a>
-                    </li>
                 </ul>
             </div>
         </div>
     </nav>
-    <div class="background">
-        <h1>Madison</h1>
+
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tutoring Schedule</title>
+    </head>
+
+    <body>
+
+        <header>
+            <h1>Live Tutoring & Study Sessions</h1>
+            <p>Find help with online tutors and teachers</p>
+        </header>
+
+        <section class="schedule">
+
+            <h2>Upcoming Sessions</h2>
+
+            <table id="scheduleTable">
+                <thead>
+                    <tr>
+                        <th>Unit</th>
+                        <th>Tutor</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Class Code</th>
+                        <th>Join</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                </tbody>
+            </table>
+
+        </section>
+
+        <script> const sessions = [
+
+                {
+                    subject: "Basic Concepts",
+                    tutor: "Mr. Smith",
+                    date: "March 10",
+                    time: "4:00 PM",
+                    type: "abc-hexp-tqy"
+                },
+
+                {
+                    subject: "Supply and Demand",
+                    tutor: "Dr. Lee",
+                    date: "March 11",
+                    time: "5:30 PM",
+                    type: "def-ijxy-zab"
+                },
+
+                {
+                    subject: "Production and Costs",
+                    tutor: "Ms. Johnson",
+                    date: "March 12",
+                    time: "3:00 PM",
+                    type: "ghi-klmn-opq"
+                },
+
+                {
+                    subject: "Markets and Governments",
+                    tutor: "Dr. Brown",
+                    date: "March 13",
+                    time: "6:00 PM",
+                    type: "rst-uvwx-yza"
+                }
+
+            ]
+
+            const table = document.querySelector("#scheduleTable tbody")
+
+            sessions.forEach(session => {
+
+                const row = document.createElement("tr")
+
+                row.innerHTML = `
+<td>${session.subject}</td>
+<td>${session.tutor}</td>
+<td>${session.date}</td>
+<td>${session.time}</td>
+<td>${session.type}</td>
+<td><button onclick="window.open('https://meet.google.com/landing?calling=1', '_blank')">Join</button></td>
+`
+
+                table.appendChild(row)
+
+            })
+
+        </script>
+
+    </body>
+
+    </html>
+
+    <footer class="footer mt-2">
+    <div class="container py-4">
+      <div class="row text-center text-md-start">
+
+        <!-- About -->
+        <div class="col-md-4 mb-3">
+          <h5>✺ Studier</h5>
+          <p class="footer-text">
+            A study platform designed to help students track assignments,
+            access learning resources, and prepare for exams.
+          </p>
+        </div>
+
+        <!-- Navigation -->
+        <div class="col-md-4 mb-3">
+          <h5>Pages</h5>
+          <ul class="list-unstyled">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="resources.html">Resources</a></li>
+            <li><a href="tutoring.html">Tutoring</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+          </ul>
+        </div>
+
+        <!-- Study Tools -->
+        <div class="col-md-4 mb-3">
+          <h5>Study Tools</h5>
+          <ul class="list-unstyled">
+            <li><a href="video.html">AP Macro Videos</a></li>
+            <li><a href="examroom.html">Exams</a></li>
+            <li><a href="onlineexam.html">Practice Quizzes</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <hr>
+
+      <div class="text-center">
+        <p class="mb-0">© 2026 Studier | Built for students</p>
+      </div>
     </div>
+  </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>

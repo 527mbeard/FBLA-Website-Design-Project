@@ -11,12 +11,90 @@ body {
   height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: flex-start; /* moves card upward */
-  padding-top: 80px;       /* controls how far from top */
+  align-items: flex-start;
+  /* moves card upward */
+  padding-top: 80px;
+  /* controls how far from top */
   /* peach background with grid */
   background-color: #e6b488;
   background-image:
     linear-gradient(#1f4f5f 1px, transparent 1px),
     linear-gradient(90deg, #1f4f5f 1px, transparent 1px);
   background-size: 40px 40px;
+}
+
+h2{
+  margin-bottom:30px;
+}
+
+body {
+  margin: 0;
+  background: #f4f6fb;
+}
+
+header {
+  background-color: #404e7c;
+  color: white;
+  text-align: center;
+  padding: 30px;
+}
+
+.schedule {
+  padding: 40px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+th,
+td {
+  padding: 15px;
+  text-align: center;
+}
+
+th {
+  background-color: #404e7c;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background: #f2f2f2;
+}
+
+button {
+  background-color: #404e7c;
+  border: none;
+  color: white;
+  padding: 8px 14px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background: #2f4fd1;
+}
+
+.footer {
+  background-color: #ff8c1a;
+  color: black;
+}
+
+.footer a {
+  text-decoration: none;
+  color: black;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+  color: white;
+}
+
+.footer-text {
+  max-width: 250px;
 }

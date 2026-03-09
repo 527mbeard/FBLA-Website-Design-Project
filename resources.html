@@ -1,94 +1,135 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="stylesheet" href="resources.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Studier Resources</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="resources.css" rel="stylesheet">
+
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-custom px-2">
-        <div class="container-fluid">
-            <a class="navbar-brand fw-bold" href="index.html">✺ Studier</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" href="resources.html">Resources</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" href="tutoring.html">Tutoring</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" href="dashboard.html">Dashboard</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" href="about.html">About</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-<div class="mainbody">
-        <div class="container-fluid py-4">
-            <div class="row g-4">
-                <div class="col-12 col-sm-6 col-lg-4">
-                    <div class="card-tile bg-ap">
-                        <div class="card-title">AP Classroom</div>
-                        <a href="https://apstudents.collegeboard.org/" target="blank" class="text-decoration-none text-dark"><button class="btn btn-light btn-overlay">LEARN MORE</button></a>
-                    </div>
-                </div>
-
-                <div class="col-12 col-sm-6 col-lg-4">
-                    <div class="card-tile bg-exam">
-                        <div class="card-title">Exam Room</div>
-                        <a href="examroom.html" class="text-decoration-none text-dark"><button class="btn btn-light btn-overlay">LEARN MORE</button></a>
-                    </div>
-                </div>
-
-                <div class="col-12 col-sm-6 col-lg-4">
-                    <div class="card-tile bg-practice">
-                        <div class="card-title">Resources</div>
-                        <a href="resources.html" class="text-decoration-none text-dark"><button class="btn btn-light btn-overlay">LEARN MORE</button></a>
-                    </div>
-                </div>
-
-                <div class="col-12 col-sm-6 col-lg-4">
-                    <div class="card-tile bg-tutor">
-                        <div class="card-title">Tutoring</div>
-                        <a href="tutoring.html" class="text-decoration-none text-dark"><button class="btn btn-light btn-overlay">LEARN MORE</button></a>
-                    </div>
-                </div>
-
-                <div class="col-12 col-sm-6 col-lg-4">
-                    <div class="card-tile bg-videos">
-                        <div class="card-title">Videos</div>
-                        <a href="videos.html" class="text-decoration-none text-dark"><button class="btn btn-light btn-overlay">LEARN MORE</button></a>
-                    </div>
-                </div>
-
-                <div class="col-12 col-sm-6 col-lg-4">
-                    <div class="card-tile bg-scores">
-                        <div class="card-title">Scores</div>
-                        <a href="scores.html" class="text-decoration-none text-dark"><button class="btn btn-light btn-overlay">LEARN MORE</button></a>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <nav class="navbar navbar-expand-lg navbar-custom px-2">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-bold" href="index.html">✺ Studier</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="resources.html">Resources</a></li>
+          <li class="nav-item"><a class="nav-link" href="tutoring.html">Tutoring</a></li>
+          <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
+        </ul>
+      </div>
     </div>
+  </nav>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous"></script>
+  <div class="container py-5">
+    <h1 class="text-center title">Study Resources</h1>
+
+    <div class="row g-4">
+      <!-- Example Resource Card -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card resource-card p-3 h-100">
+          <h5 class="card-title">Khan Academy</h5>
+          <p>Free tutorials and exercises for Math, Science, and more.</p>
+          <a href="https://www.khanacademy.org" target="_blank" class="btn btn-light">Visit</a>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card resource-card p-3 h-100">
+          <h5 class="card-title">Clifford Notes</h5>
+          <p>Concise study guides for all AP Macro units create by yours truly, Jacob Clifford.</p>
+          <a href="https://www.ultimatereviewpacket.com/pages/macroeconomics-products" target="_blank" class="btn btn-light">Visit</a>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card resource-card p-3 h-100">
+          <h5 class="card-title">Quizlet</h5>
+          <p>Interactive flashcards and practice tests for every subject.</p>
+          <a href="https://www.quizlet.com" target="_blank" class="btn btn-light">Visit</a>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card resource-card p-3 h-100">
+          <h5 class="card-title">AP Macro Crash Course Book</h5>
+          <p>Comprehensive study guide for AP Macroeconomics.</p>
+          <a href="https://www.amazon.com/Macroeconomics-Course-Online-Advanced-Placement/dp/0738612596" target="_blank" class="btn btn-light">Visit</a>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card resource-card p-3 h-100">
+          <h5 class="card-title">YouTube Education</h5>
+          <p>Video lessons for any subject from reliable channels.</p>
+          <a href="https://www.youtube.com/education" target="_blank" class="btn btn-light">Visit</a>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card resource-card p-3 h-100">
+          <h5 class="card-title">Knowt</h5>
+          <p>Online multiple choice questions and study guides</p>
+          <a href="https://knowt.com/exams/AP/AP-Macroeconomics" target="_blank" class="btn btn-light">Visit</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer mt-2">
+    <div class="container py-4">
+      <div class="row text-center text-md-start">
+
+        <!-- About -->
+        <div class="col-md-4 mb-3">
+          <h5>✺ Studier</h5>
+          <p class="footer-text">
+            A study platform designed to help students track assignments,
+            access learning resources, and prepare for exams.
+          </p>
+        </div>
+
+        <!-- Navigation -->
+        <div class="col-md-4 mb-3">
+          <h5>Pages</h5>
+          <ul class="list-unstyled">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="resources.html">Resources</a></li>
+            <li><a href="tutoring.html">Tutoring</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+          </ul>
+        </div>
+
+        <!-- Study Tools -->
+        <div class="col-md-4 mb-3">
+          <h5>Study Tools</h5>
+          <ul class="list-unstyled">
+            <li><a href="video.html">AP Macro Videos</a></li>
+            <li><a href="examroom.html">Exams</a></li>
+            <li><a href="onlineexam.html">Practice Quizzes</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <hr>
+
+      <div class="text-center">
+        <p class="mb-0">© 2026 Studier | Built for students</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

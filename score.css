@@ -1,0 +1,71 @@
+.navbar-custom {
+  background-color: #ff8c1a;
+}
+
+body {
+  margin: 0;
+  font-family: 'Georgia', serif;
+}
+
+body {
+    background-color: #404e7c;
+}
+
+.dashboard-card {
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.progress {
+    height: 25px;
+}
+
+.completed {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+.btn{
+  background-color:#5cb5d8;
+  border-color: #5cb5d8;
+  color:black;
+}
+
+.btn-hover:hover{
+  background-color:#154cb1;
+  border-color: #154cb1;
+  color:white;
+} 
+
+.title{
+  color: white;
+}
+
+.dashboard-card {
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    background-color: #ffc0cb; 
+} 
+
+.progress-bar {
+    background-color: #5cb5d8 !important; 
+}
+
+.footer {
+  background-color: #ff8c1a;
+  color: black;
+}
+
+.footer a {
+  text-decoration: none;
+  color: black;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+  color: white;
+}
+
+.footer-text {
+  max-width: 250px;
+}
