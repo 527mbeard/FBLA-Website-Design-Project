@@ -5,7 +5,10 @@
   <meta charset="UTF-8">
   <title>Studier Lesson Tracker</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
   <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
@@ -39,195 +42,192 @@
     </div>
   </nav>
 
-<style>
+  <style>
 
-</style>
-</head>
+  </style>
+  </head>
 
-<body>
+  <body>
 
-<div class="container py-5">
+    <div class="container py-5">
 
-    <h1 class="text-center title mb-4">Assignment Tracker</h1>
+      <h1 class="text-center title mb-4">Assignment Tracker</h1>
 
-    <!-- Progress Overview -->
-    <div class="card dashboard-card p-4 mb-4">
+      <!-- Progress Overview -->
+      <div class="card dashboard-card p-4 mb-4">
         <h4>Overall Progress</h4>
         <div class="progress mb-3">
-            <div id="progressBar" 
-                 class="progress-bar bg-success" 
-                 role="progressbar" 
-                 style="width: 0%">
-                0%
-            </div>
+          <div id="progressBar" class="progress-bar bg-success" role="progressbar" style="width: 0%">
+            0%
+          </div>
         </div>
         <p><strong>Completed:</strong> <span id="completedCount">0</span> / <span id="totalCount">0</span></p>
-    </div>
+      </div>
 
-    <!-- Activity List -->
-    <div class="card dashboard-card p-4 mb-4">
+      <!-- Activity List -->
+      <div class="card dashboard-card p-4 mb-4">
         <h4>Learning Activities</h4>
         <ul id="activityList" class="list-group"></ul>
-    </div>
+      </div>
 
-    <!-- Reset Button -->
-    <div class="text-center">
+      <!-- Reset Button -->
+      <div class="text-center">
         <button onclick="resetProgress()" class="btn">Reset Progress</button>
+      </div>
+
     </div>
 
-</div>
+    <script>
+      const activities = [
+        "Unit One Clifford Videos",
+        "Unit One Clifford Study Guide",
+        "Unit One Khan Academy",
+        "Unit One Flashcards",
+        "Unit Two Clifford Videos",
+        "Unit Two Clifford Study Guide",
+        "Unit Two Khan Academy",
+        "Unit Two Flashcards",
+        "Unit Three Clifford Videos",
+        "Unit Three Clifford Study Guide",
+        "Unit Three Khan Academy",
+        "Unit Three Flashcards",
+        "Unit Four Clifford Videos",
+        "Unit Four Clifford Study Guide",
+        "Unit Four Khan Academy",
+        "Unit Four Flashcards",
+        "Unit Five Clifford Videos",
+        "Unit Five Clifford Study Guide",
+        "Unit Five Khan Academy",
+        "Unit Five Flashcards",
+        "Unit Six Clifford Videos",
+        "Unit Six Clifford Study Guide",
+        "Unit Six Khan Academy",
+        "Unit Six Flashcards",
+      ];
 
-<script>
-const activities = [
-    "Unit One Clifford Videos",
-    "Unit One Clifford Study Guide",
-    "Unit One Khan Academy",
-    "Unit One Flashcards",
-    "Unit Two Clifford Videos",
-    "Unit Two Clifford Study Guide",
-    "Unit Two Khan Academy",
-    "Unit Two Flashcards",
-    "Unit Three Clifford Videos",
-    "Unit Three Clifford Study Guide",
-    "Unit Three Khan Academy",
-    "Unit Three Flashcards",  
-    "Unit Four Clifford Videos",
-    "Unit Four Clifford Study Guide",
-    "Unit Four Khan Academy",
-    "Unit Four Flashcards",
-    "Unit Five Clifford Videos",
-    "Unit Five Clifford Study Guide",
-    "Unit Five Khan Academy",
-    "Unit Five Flashcards",
-    "Unit Six Clifford Videos",
-    "Unit Six Clifford Study Guide",
-    "Unit Six Khan Academy",
-    "Unit Six Flashcards",
-];
+      const activityList = document.getElementById("activityList");
+      const progressBar = document.getElementById("progressBar");
+      const completedCount = document.getElementById("completedCount");
+      const totalCount = document.getElementById("totalCount");
 
-const activityList = document.getElementById("activityList");
-const progressBar = document.getElementById("progressBar");
-const completedCount = document.getElementById("completedCount");
-const totalCount = document.getElementById("totalCount");
+      let completed = 0;
+      totalCount.textContent = activities.length;
 
-let completed = 0;
-totalCount.textContent = activities.length;
+      function renderActivities() {
+        activityList.innerHTML = "";
 
-function renderActivities() {
-    activityList.innerHTML = "";
+        activities.forEach((activity, index) => {
+          const li = document.createElement("li");
+          li.className = "list-group-item d-flex justify-content-between align-items-center";
 
-    activities.forEach((activity, index) => {
-        const li = document.createElement("li");
-        li.className = "list-group-item d-flex justify-content-between align-items-center";
-
-        li.innerHTML = `
+          li.innerHTML = `
             <span id="text-${index}">${activity}</span>
             <button id="btn-${index}" class="btn btn-hover" onclick="toggleComplete(${index})">
                 Mark Complete
             </button>
         `;
 
-        activityList.appendChild(li);
-    });
-}
+          activityList.appendChild(li);
+        });
+      }
 
-function toggleComplete(index) {
-    const text = document.getElementById(`text-${index}`);
-    const btn = document.getElementById(`btn-${index}`);
+      function toggleComplete(index) {
+        const text = document.getElementById(`text-${index}`);
+        const btn = document.getElementById(`btn-${index}`);
 
-    if (!text.classList.contains("completed")) {
-        text.classList.add("completed");
-        btn.textContent = "Undo";
-        btn.classList.remove("btn-success");
-        btn.classList.add("btn-warning");
-        completed++;
-    } else {
-        text.classList.remove("completed");
-        btn.textContent = "Mark Complete";
-        btn.classList.remove("btn-warning");
-        btn.classList.add("btn-success");
-        completed--;
-    }
+        if (!text.classList.contains("completed")) {
+          text.classList.add("completed");
+          btn.textContent = "Undo";
+          btn.classList.remove("btn-success");
+          btn.classList.add("btn-warning");
+          completed++;
+        } else {
+          text.classList.remove("completed");
+          btn.textContent = "Mark Complete";
+          btn.classList.remove("btn-warning");
+          btn.classList.add("btn-success");
+          completed--;
+        }
 
-    updateProgress();
-}
-
-function markComplete(index) {
-    const text = document.getElementById(`text-${index}`);
-    
-    if (!text.classList.contains("completed")) {
-        text.classList.add("completed");
-        completed++;
         updateProgress();
-    }
-}
+      }
 
-function updateProgress() {
-    let percent = Math.round((completed / activities.length) * 100);
-    
-    progressBar.style.width = percent + "%";
-    progressBar.textContent = percent + "%";
-    completedCount.textContent = completed;
-}
+      function markComplete(index) {
+        const text = document.getElementById(`text-${index}`);
 
-function resetProgress() {
-    completed = 0;
-    renderActivities();
-    updateProgress();
-}
+        if (!text.classList.contains("completed")) {
+          text.classList.add("completed");
+          completed++;
+          updateProgress();
+        }
+      }
 
-renderActivities();
-updateProgress();
-</script>
+      function updateProgress() {
+        let percent = Math.round((completed / activities.length) * 100);
 
-<footer class="footer mt-2">
-    <div class="container py-4">
-      <div class="row text-center text-md-start">
+        progressBar.style.width = percent + "%";
+        progressBar.textContent = percent + "%";
+        completedCount.textContent = completed;
+      }
 
-        <!-- About -->
-        <div class="col-md-4 mb-3">
-          <h5>✺ Studier</h5>
-          <p class="footer-text">
-            A study platform designed to help students track assignments,
-            access learning resources, and prepare for exams.
-          </p>
+      function resetProgress() {
+        completed = 0;
+        renderActivities();
+        updateProgress();
+      }
+
+      renderActivities();
+      updateProgress();
+    </script>
+
+    <footer class="footer mt-2">
+      <div class="container py-4">
+        <div class="row text-center text-md-start">
+
+          <!-- About -->
+          <div class="col-md-4 mb-3">
+            <h5>✺ Studier</h5>
+            <p class="footer-text">
+              A study platform designed to help students track assignments,
+              access learning resources, and prepare for exams.
+            </p>
+          </div>
+
+          <!-- Navigation -->
+          <div class="col-md-4 mb-3">
+            <h5>Pages</h5>
+            <ul class="list-unstyled">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="resources.html">Resources</a></li>
+              <li><a href="tutoring.html">Tutoring</a></li>
+              <li><a href="dashboard.html">Dashboard</a></li>
+            </ul>
+          </div>
+
+          <!-- Study Tools -->
+          <div class="col-md-4 mb-3">
+            <h5>Study Tools</h5>
+            <ul class="list-unstyled">
+              <li><a href="video.html">AP Macro Videos</a></li>
+              <li><a href="examroom.html">Exams</a></li>
+              <li><a href="onlineexam.html">Practice Quizzes</a></li>
+            </ul>
+          </div>
+
         </div>
 
-        <!-- Navigation -->
-        <div class="col-md-4 mb-3">
-          <h5>Pages</h5>
-          <ul class="list-unstyled">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="resources.html">Resources</a></li>
-            <li><a href="tutoring.html">Tutoring</a></li>
-            <li><a href="dashboard.html">Dashboard</a></li>
-          </ul>
-        </div>
+        <hr>
 
-        <!-- Study Tools -->
-        <div class="col-md-4 mb-3">
-          <h5>Study Tools</h5>
-          <ul class="list-unstyled">
-            <li><a href="video.html">AP Macro Videos</a></li>
-            <li><a href="examroom.html">Exams</a></li>
-            <li><a href="onlineexam.html">Practice Quizzes</a></li>
-          </ul>
+        <div class="text-center">
+          <p class="mb-0">© 2026 Studier | Built for students</p>
         </div>
-
       </div>
+    </footer>
 
-      <hr>
-
-      <div class="text-center">
-        <p class="mb-0">© 2026 Studier | Built for students</p>
-      </div>
-    </div>
-  </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-    crossorigin="anonymous"></script>
-  <script src="index.js"></script>
-</body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+  </body>
 
 </html>
